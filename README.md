@@ -184,7 +184,7 @@ C:\xampp\htdocs\
 Sehingga menjadi:
 
 ```text
-C:\xampp\htdocs\K_pop collector archive
+C:\xampp\htdocs\K-pop collector archive
 ```
 
 ### 2. Jalankan XAMPP
@@ -202,7 +202,7 @@ MySQL tidak diperlukan karena project tidak menggunakan database.
 Akses:
 
 ```text
-http://localhost/K_pop collector archive/
+http://localhost/K-pop collector archive/
 ```
 
 Website akan menampilkan halaman **K-Pop Collector Archive**.
