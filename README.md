@@ -1,4 +1,4 @@
-# K-Pop Collector Archive
+# K-Album
 
 ## Deskripsi Project
 
