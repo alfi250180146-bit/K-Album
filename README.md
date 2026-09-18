@@ -1,71 +1,145 @@
-# K-pop collector archive
+# 🎵 K-Pop Collector Archive
 
-## Deskripsi Project
+<p align="center">
+  <img src="image/tampilan.jpg" width="800">
+</p>
 
-K-Pop Collector Archive adalah mini project Product Information System berbasis PHP yang digunakan untuk menampilkan informasi koleksi album K-Pop dari BTS, SEVENTEEN, dan CORTIS.
+<p align="center">
+  <b>Mini Project 1 PHP — Arsitektur 3 Layer</b>
+</p>
 
-Project ini dibuat dengan konsep arsitektur 3 layer, yaitu Data Layer, Processing Layer, dan Presentation Layer. Data album disimpan dalam array multidimensional, kemudian diproses untuk menghitung total nilai stok dan menentukan warna baris tabel berdasarkan jumlah stok.
+---
+
+## Tentang Project
+
+**K-Pop Collector Archive** adalah website sederhana berbasis PHP yang digunakan untuk menampilkan informasi koleksi album K-Pop.
+
+Project ini dibuat sebagai **Mini Project 1 PHP** dengan menerapkan konsep **arsitektur 3 layer**, yaitu:
+
+- **Data Layer** → menyimpan data album.
+- **Processing Layer** → mengolah data dan menghitung total nilai stok.
+- **Presentation Layer** → menampilkan data dalam bentuk tabel HTML.
+
+Project menggunakan koleksi album dari tiga grup K-Pop, yaitu **BTS, SEVENTEEN, dan CORTIS**.
+
+---
 
 ## Tujuan
 
-1. Menerapkan konsep pemisahan data, proses, dan tampilan.
-2. Menggunakan array multidimensional untuk menyimpan data produk.
-3. Membuat fungsi untuk menghitung total nilai stok.
-4. Menerapkan conditional untuk memberikan warna pada stok kritis.
-5. Menampilkan data menggunakan perulangan `foreach` pada tabel HTML.
+Project ini bertujuan untuk:
 
-## Tema Project
+1. Memahami penggunaan PHP dasar.
+2. Menerapkan array multidimensional.
+3. Membuat dan menggunakan function pada PHP.
+4. Menerapkan percabangan `if`.
+5. Menggunakan `foreach` untuk menampilkan data.
+6. Memahami penerapan arsitektur 3 layer pada aplikasi sederhana.
 
-**K-Pop Collector Archive**
+---
 
-Data produk yang digunakan berupa album K-Pop dari:
+## 💿 Informasi Album
 
-* BTS
-* SEVENTEEN
-* CORTIS
+Website menampilkan informasi:
 
-Field data yang digunakan:
+| Field | Keterangan |
+|---|---|
+| ID | Nomor identitas album |
+| Nama Album | Nama album K-Pop |
+| Kategori | Nama grup/artis |
+| Harga | Harga setiap album |
+| Stok | Jumlah album yang tersedia |
+| Deskripsi | Penjelasan singkat tentang album |
 
-* ID
-* Nama
-* Kategori
-* Harga
-* Stok
-* Deskripsi
+Album dengan stok kurang dari 3 akan diberikan warna berbeda sebagai tanda **stok kritis**.
 
-## Struktur Arsitektur
+---
+
+## Koleksi Album
+
+Project ini memiliki **9 album** dari tiga grup:
+
+### BTS
+
+- MAP OF THE SOUL : 7
+- BE
+- Proof
+- LOVE YOURSELF 結 'Answer'
+
+### SEVENTEEN
+
+- 17 IS RIGHT HERE
+- SEVENTEENTH HEAVEN
+- HAPPY BURSTDAY
+
+### CORTIS
+
+- COLOR OUTSIDE THE LINES
+- GREENGREEN
+
+---
+
+## Arsitektur 3 Layer
 
 ### 1. Data Layer — `products.php`
 
-File ini berfungsi untuk menyimpan data album dalam bentuk array multidimensional.
+Berisi data koleksi album dalam bentuk **array multidimensional**.
 
-Data yang disimpan meliputi ID, nama album, kategori, harga, stok, dan deskripsi.
+Data yang disimpan:
+
+```text
+ID
+Nama
+Kategori
+Harga
+Stok
+Deskripsi
+```
 
 ### 2. Processing Layer — `functions.php`
 
-File ini berisi fungsi pengolahan data, yaitu:
+Berisi fungsi untuk memproses data.
 
-* `hitungTotalNilaiStok()` untuk menghitung total nilai stok.
-* `tentukanWarnaStok()` untuk menentukan warna baris tabel jika stok kurang dari 3.
+Fungsi utama:
 
-Rumus yang digunakan:
+```php
+hitungTotalNilaiStok()
+```
 
-**Nilai Stok = Harga × Stok**
+Fungsi tersebut menghitung total nilai stok menggunakan:
+
+```text
+Harga × Stok
+```
+
+File ini juga menggunakan conditional:
+
+```php
+if ($stok < 3)
+```
+
+untuk memberikan tanda pada album dengan stok kritis.
 
 ### 3. Presentation Layer — `index.php`
 
-File ini berfungsi untuk menampilkan data ke halaman web.
+Berfungsi menampilkan hasil pengolahan data kepada pengguna.
 
-File `index.php` menggunakan:
+File ini menggunakan:
 
-* `require_once` untuk memanggil file `products.php` dan `functions.php`.
-* `foreach` untuk menampilkan setiap data album ke tabel HTML.
-* Conditional class untuk memberikan warna pada baris dengan stok kurang dari 3.
+- `require_once`
+- `foreach`
+- HTML Table
+- PHP
+- CSS
 
-## Struktur Folder
+---
+
+## Struktur Project
 
 ```text
 kpop-collector-archive/
+│
+├── image/
+│   └── tampilan.jpg
 │
 ├── products.php
 ├── functions.php
@@ -73,45 +147,139 @@ kpop-collector-archive/
 └── README.md
 ```
 
-## Cara Menjalankan Project
+### Penjelasan File
 
-1. Pastikan XAMPP sudah terinstal.
-
-2. Aktifkan **Apache** pada XAMPP.
-
-3. Simpan folder project di dalam:
-
-   `C:\xampp\htdocs\`
-
-4. Buka browser.
-
-5. Masukkan alamat:
-
-   `http://localhost/k-pop collector archive/`
-
-6. Halaman informasi album akan ditampilkan.
-
-## Fitur Project
-
-* Menampilkan daftar album K-Pop.
-* Menampilkan kategori artis.
-* Menampilkan harga album.
-* Menampilkan jumlah stok.
-* Menghitung total nilai stok.
-* Memberikan warna berbeda pada baris dengan stok kurang dari 3.
-
-## Teknologi yang Digunakan
-
-* PHP
-* HTML
-* CSS
-* XAMPP
-* Visual Studio Code
-
-## Kesimpulan
-
-Project ini menerapkan konsep arsitektur 3 layer secara sederhana. Data disimpan pada Data Layer, diproses pada Processing Layer, dan ditampilkan melalui Presentation Layer. Dengan pemisahan tersebut, setiap bagian memiliki tugas yang jelas dan lebih mudah dipahami.
+| File/Folder | Fungsi |
+|---|---|
+| `products.php` | Menyimpan data album |
+| `functions.php` | Mengolah data dan membuat fungsi |
+| `index.php` | Menampilkan website |
+| `image/` | Menyimpan gambar tampilan website |
+| `README.md` | Dokumentasi project |
 
 ---
 
-**Mini Project 1: Product Information System (Desain)**
+## Teknologi yang Digunakan
+
+- **PHP**
+- **HTML**
+- **CSS**
+- **XAMPP**
+- **Visual Studio Code**
+
+Project tidak menggunakan database karena fokus pada penerapan dasar PHP dan konsep **3 layer architecture**.
+
+---
+
+## Cara Menjalankan Project
+
+### 1. Simpan Project
+
+Letakkan folder project di:
+
+```text
+C:\xampp\htdocs\
+```
+
+Sehingga menjadi:
+
+```text
+C:\xampp\htdocs\K_pop collector archive
+```
+
+### 2. Jalankan XAMPP
+
+Aktifkan:
+
+```text
+Apache
+```
+
+MySQL tidak diperlukan karena project tidak menggunakan database.
+
+### 3. Buka Browser
+
+Akses:
+
+```text
+http://localhost/K_pop collector archive/
+```
+
+Website akan menampilkan halaman **K-Pop Collector Archive**.
+
+---
+
+## Perhitungan Total Nilai Stok
+
+Sistem menghitung nilai seluruh stok album dengan rumus:
+
+```text
+Total Nilai Stok = Harga Album × Jumlah Stok
+```
+
+Dari data yang tersedia, total nilai stok seluruh album adalah:
+
+```text
+Rp 9.980.000
+```
+
+---
+
+## Fitur
+
+- Menampilkan 9 koleksi album K-Pop.
+- Menampilkan nama grup/artis.
+- Menampilkan harga album.
+- Menampilkan jumlah stok.
+- Menampilkan deskripsi album.
+- Menghitung total nilai stok secara otomatis.
+- Memberikan tanda warna pada stok kurang dari 3.
+- Menggunakan konsep arsitektur 3 layer.
+
+---
+
+## Konsep PHP yang Diterapkan
+
+```text
+Array Multidimensional
+        ↓
+Function
+        ↓
+Conditional (if)
+        ↓
+Perulangan foreach
+        ↓
+Pengolahan Data
+        ↓
+Tampilan HTML
+```
+
+Konsep tersebut digunakan untuk memisahkan penyimpanan data, proses pengolahan, dan tampilan agar struktur program lebih mudah dipahami.
+
+---
+
+## Project Information
+
+**Project:** K-Pop Collector Archive  
+**Mata Kuliah:** Pemrograman PHP / Mini Project 1  
+**Konsep:** 3 Layer Architecture  
+**Platform:** Web  
+**Bahasa:** PHP  
+
+---
+
+## Kesimpulan
+
+**K-Pop Collector Archive** merupakan project sederhana berbasis PHP yang menerapkan konsep **arsitektur 3 layer**.
+
+Dengan pemisahan antara **Data Layer, Processing Layer, dan Presentation Layer**, program menjadi lebih terstruktur dan mudah dipahami. Project ini juga menerapkan array multidimensional, function, conditional, dan perulangan `foreach` dalam pengolahan data koleksi album K-Pop.
+
+---
+
+<p align="center">
+   <b>K-Pop Collector Archive</b> 
+</p>
+
+<p align="center">
+  Mini Project 1 PHP
+</p>
