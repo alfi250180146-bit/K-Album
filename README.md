@@ -1,4 +1,4 @@
-# K-pop-collector-archive
+# K-pop collector archive
 
 ## Deskripsi Project
 
@@ -87,7 +87,7 @@ kpop-collector-archive/
 
 5. Masukkan alamat:
 
-   `http://localhost/kpop-collector-archive/`
+   `http://localhost/k-pop collector archive/`
 
 6. Halaman informasi album akan ditampilkan.
 
